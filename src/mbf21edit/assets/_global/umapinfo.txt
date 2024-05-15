@@ -1,0 +1,9 @@
+MAP MAP01
+{
+	levelname = "MBF21 Demo"
+	levelpic = "CWILV00"
+	music = "D_RUNNIN"
+	skytexture = "SKY3"
+	next = "MAP02"
+	nextsecret = "MAP31"
+}
