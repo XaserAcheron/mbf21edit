@@ -1,0 +1,55 @@
+/*****************************************************************************
+ * mbf21edit - decohack - root
+ * (c) xaser acheron 2024
+ *     MIT License
+ *****************************************************************************
+ * Homing Plasma Rifle
+ * 
+ * Fires homing projectiles which turn green while seeking on a target.
+ * 
+ * Demonstrates:
+ *  A_WeaponProjectile
+ *  A_SeekTracer
+ *  A_FindTracer
+ *  A_JumpIfTracerInSight
+ * 
+ ****************************************************************************/
+
+weapon SampleHomingPlasmaRifle "Homing Plasma Rifle"
+{
+	states
+	{
+		Fire:
+			PLSG A 0 A_ConsumeAmmo
+			PLSG A 0 A_GunFlash
+			PLSG A 3 A_WeaponProjectile(SampleHomingPlasma)
+			PLSG B 20 A_ReFire
+			Goto Ready
+		Flash:
+			PLSF A 1 Bright A_Light1
+			PLSF B 1 Bright A_Light2
+			Goto LightDone
+	}
+}
+
+thing SampleHomingPlasma : thing MTF_PLASMA_BALL "Homing Plasma Ball"
+{
+	states
+	{
+		Seek:
+			APLS AABB 1 Bright A_SeekTracer(5.0, 30.0)
+			APLS A 0 Bright A_JumpIfTracerInSight(Seek)
+		Spawn:
+			PLSS AABB 1 Bright A_SeekTracer(9.0, 6.0)
+			PLSS A 1 Bright A_FindTracer(90.0)
+			PLSS A 0 Bright A_JumpIfTracerInSight(Seek)
+			Loop
+		SeekDeath:
+			APBX ABCDE 4 Bright
+			Stop
+		Death:
+			PLSE A 0 Bright A_JumpIfTracerInSight(SeekDeath)
+			PLSE ABCDE 4 Bright
+			Stop
+	}
+}

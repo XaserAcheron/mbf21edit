@@ -1,0 +1,61 @@
+/*****************************************************************************
+ * mbf21edit - decohack - root
+ * (c) xaser acheron 2024
+ *     MIT License
+ *****************************************************************************
+ * Spreadfire Cannon
+ * 
+ * A spready automatic fireball-shotgun thingy, modeled after Descent's
+ * Spreadfire Cannon weapon. Quite OP as a shotgun replacement, but
+ * this is a demo wad, so balance is moot. ;)
+ * 
+ * Demonstrates:
+ *  A_WeaponProjectile (angle & pitch)
+ *  A_WeaponSound
+ *  A_ConsumeAmmo
+ *  A_RefireTo
+ * 
+ ****************************************************************************/
+
+weapon SampleSpreadfireCannon "Spreadfire Cannon"
+{
+	states
+	{
+		Fire:
+			SHTG A 0 A_WeaponProjectile(SampleSpreadShot, -5)
+			SHTG A 0 A_WeaponProjectile(SampleSpreadShot,  0)
+			SHTG A 0 A_WeaponProjectile(SampleSpreadShot,  5)
+			SHTG A 0 A_GunFlash
+			SHTG A 0 A_ConsumeAmmo(1)
+			SHTG A 8 A_WeaponSound(shotgn)
+			SHTG A 0 A_RefireTo(Fire2)
+			Goto FireEnd
+		Fire2:
+			SHTG A 0 A_WeaponProjectile(SampleSpreadShot, 0, -5)
+			SHTG A 0 A_WeaponProjectile(SampleSpreadShot, 0,  0)
+			SHTG A 0 A_WeaponProjectile(SampleSpreadShot, 0,  5)
+			SHTG A 0 A_GunFlash
+			SHTG A 0 A_ConsumeAmmo(1)
+			SHTG A 8 A_WeaponSound(shotgn)
+			SHTG A 0 A_RefireTo(Fire)
+			Goto FireEnd
+		FireEnd:
+			SHTG A 2
+			SHTG BC 5
+			SHTG D 4
+			SHTG CB 5
+			SHTG A 3
+			Goto Ready
+		Flash:
+			SHTF A 2 Bright A_Light1
+			SHTF B 2 Bright A_Light2
+			goto lightdone
+	}
+}
+
+thing SampleSpreadShot : thing MTF_IMP_FIREBALL "Spreadfire Shot"
+{
+	SeeSound ""
+	Damage 5
+	Speed 20
+}

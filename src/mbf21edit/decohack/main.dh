@@ -7,4 +7,15 @@
 #include <mbf21>
 #include <friendly>
 
+//
+// Defines
+//
 #include "defines.dh"
+
+//
+// Comprehensive Samples
+//
+#include "samples/weapons/spreadfirecannon.dh"
+#include "samples/weapons/superchaingun.dh"
+#include "samples/weapons/grenadelauncher.dh"
+#include "samples/weapons/homingplasmarifle.dh"

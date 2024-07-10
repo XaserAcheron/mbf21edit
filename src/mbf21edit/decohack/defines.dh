@@ -4,4 +4,16 @@
  *     MIT License
  ****************************************************************************/
 
-// [XA] TODO: stuff here; this is just the usual blank template. :P
+//
+// Aliases & Declarations
+//
+
+alias weapon SampleSpreadfireCannon  WP_SHOTGUN
+alias weapon SampleSuperChaingun     WP_CHAINGUN
+alias weapon SampleGrenadeLauncher   WP_MISSILE
+alias weapon SampleHomingPlasmaRifle WP_PLASMA
+
+auto thing SampleSpreadShot {}
+auto thing SampleGrenade {}
+auto thing SampleGrenadeBoom {}
+auto thing SampleHomingPlasma {}
