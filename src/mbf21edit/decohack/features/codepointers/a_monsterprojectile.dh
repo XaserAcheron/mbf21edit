@@ -1,0 +1,67 @@
+/*****************************************************************************
+ * mbf21edit - decohack
+ * (c) xaser acheron 2024
+ *     MIT License
+ *****************************************************************************
+ * 
+ * Feature: A_MonsterProjectile
+ * 
+ * Defines a pair of imp actors; one fires a wide spread of projectiles,
+ * the other fires a dense grid.
+ * 
+ ****************************************************************************/
+
+// Declarations
+
+auto thing A_MonsterProjectile__ImpSpread {}
+auto thing A_MonsterProjectile__ImpGrid {}
+
+// Definitions
+
+thing A_MonsterProjectile__ImpSpread : thing MTF_IMP "A_MonsterProjectile - ImpSpread"
+{
+	//$Category MBF21Edit
+	EdNum 3101
+
+	ProjectileGroup 3101
+
+	States
+	{
+		Missile:
+			TROO EF 8 A_FaceTarget
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, -45.0)
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, -22.5)
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL,   0.0)
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL,  22.5)
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL,  45.0)
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL,   0.0, -10.0)
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL,   0.0,  -5.0)
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL,   0.0,   5.0)
+			TROO G 6 A_MonsterProjectile(MTF_IMP_FIREBALL,   0.0,  10.0)
+			Goto See
+	}
+}
+
+thing A_MonsterProjectile__ImpGrid : thing MTF_IMP "A_MonsterProjectile - ImpGrid"
+{
+	//$Category MBF21Edit
+	EdNum 3102
+
+	ProjectileGroup 3101
+
+	States
+	{
+		Missile:
+			TROO EF 8 A_FaceTarget
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0, -10.0, -10.0)
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,   0.0, -10.0)
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,  10.0, -10.0)
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0, -10.0,   0.0)
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,   0.0,   0.0)
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,  10.0,   0.0)
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0, -10.0,  10.0)
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,   0.0,  10.0)
+			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,  10.0,  10.0)
+			Goto See
+	}
+}

@@ -8,13 +8,21 @@
 #include <friendly>
 
 //
-// Defines
+// Common Stuff
 //
+
 #include "defines.dh"
+
+//
+// Individual Feature showcases
+//
+
+#include "features/codepointers/a_monsterprojectile.dh"
 
 //
 // Comprehensive Samples
 //
+
 #include "samples/weapons/spreadfirecannon.dh"
 #include "samples/weapons/superchaingun.dh"
 #include "samples/weapons/grenadelauncher.dh"
