@@ -8,9 +8,11 @@
  * A super-chaingun with a wind-up, firing automatic mini-shotgun blasts.
  * 
  * Demonstrates:
+ *  "SILENT" flag
  *  "ammopershot" field
  *  A_WeaponBulletAttack
  *  A_WeaponSound
+ *  A_WeaponAlert
  *  A_ConsumeAmmo
  *  A_GunFlashTo
  *  A_RefireTo
@@ -19,6 +21,7 @@
 
 weapon SampleSuperChaingun "Super Chaingun"
 {
+	+SILENT
 	ammopershot 3
 	states
 	{
@@ -33,6 +36,7 @@ weapon SampleSuperChaingun "Super Chaingun"
 			CHGG BA 3
 			CHGG BAB 2
 		FireLoop:
+			CHGG A 0 A_WeaponAlert
 			CHGG A 0 A_ConsumeAmmo(2)
 			CHGG A 0 A_GunFlashTo(Flash1, 0)
 			CHGG A 0 A_WeaponSound(shotgn)
