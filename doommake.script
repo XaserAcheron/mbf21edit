@@ -1088,6 +1088,7 @@ check entry maptextures(args) {
 check entry run(args) {
 	doInit(args);
 	doAll();
+	doRelease();
 	return runCommon(args);	
 }
 
