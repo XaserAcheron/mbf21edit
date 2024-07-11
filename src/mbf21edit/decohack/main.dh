@@ -24,6 +24,14 @@
 #include "features/codepointers/a_radiusdamage.dh"
 #include "features/codepointers/a_noisealert.dh"
 #include "features/codepointers/a_healchase.dh"
+#include "features/codepointers/a_seektracer.dh"
+#include "features/codepointers/a_findtracer.dh"
+#include "features/codepointers/a_cleartracer.dh"
+#include "features/codepointers/a_jumpifhealthbelow.dh"
+#include "features/codepointers/a_jumpiftargetinsight.dh"
+#include "features/codepointers/a_jumpiftargetcloser.dh"
+#include "features/codepointers/a_jumpiftracerinsight.dh"
+#include "features/codepointers/a_jumpiftracercloser.dh"
 
 //
 // Comprehensive Samples

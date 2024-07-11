@@ -50,11 +50,11 @@ thing A_SpawnObject__Armor : thing MTF_IMP "A_SpawnObject - Armor Imp"
 			TROO H 2
 			TROO H 2 {
 				A_Pain()
-				A_SpawnObject(MTF_ARMOR_BONUS,  16.0,   0.0, 32.0, 0.0, 0.0, 0.0, 0.0)
-				A_SpawnObject(MTF_ARMOR_BONUS, -16.0,   0.0, 32.0, 0.0, 0.0, 0.0, 0.0)
-				A_SpawnObject(MTF_ARMOR_BONUS,   0.0,   0.0,  8.0, 0.0, 0.0, 0.0, 0.0)
-				A_SpawnObject(MTF_ARMOR_BONUS,   0.0,  16.0, 16.0, 0.0, 0.0, 0.0, 0.0)
-				A_SpawnObject(MTF_ARMOR_BONUS,   0.0, -16.0, 16.0, 0.0, 0.0, 0.0, 0.0)
+				A_SpawnObject(MTF_ARMOR_BONUS, 0.0,  16.0,   0.0, 32.0, 0.0, 0.0, 0.0)
+				A_SpawnObject(MTF_ARMOR_BONUS, 0.0, -16.0,   0.0, 32.0, 0.0, 0.0, 0.0)
+				A_SpawnObject(MTF_ARMOR_BONUS, 0.0,   0.0,   0.0,  8.0, 0.0, 0.0, 0.0)
+				A_SpawnObject(MTF_ARMOR_BONUS, 0.0,   0.0,  16.0, 16.0, 0.0, 0.0, 0.0)
+				A_SpawnObject(MTF_ARMOR_BONUS, 0.0,   0.0, -16.0, 16.0, 0.0, 0.0, 0.0)
 			}
 			Goto See
 	}

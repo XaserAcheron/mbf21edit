@@ -1,0 +1,49 @@
+/*****************************************************************************
+ * mbf21edit - decohack
+ * (c) mtrop 2024
+ *     MIT License
+ *****************************************************************************
+ * 
+ * Feature: A_ClearTracer
+ * 
+ * Defines an imp that fires a seeker fireball that gives up over time.
+ *
+ ****************************************************************************/
+
+// Declarations
+
+auto thing A_ClearTracer__Fireball {}
+auto thing A_ClearTracer__Imp {}
+
+// Definitions
+
+thing A_ClearTracer__Fireball : thing MTF_IMP_FIREBALL "A_ClearTracer - Fireball"
+{
+	States
+	{
+		Spawn:
+			APLS ABABABAB 4 BRIGHT A_SeekTracer(5.0, 30.0)
+			APLS A 4 BRIGHT	A_ClearTracer()
+			// Fall through
+		NoTrace:
+			BAL1 AB 4 BRIGHT
+   			Loop
+	}
+
+}
+
+thing A_ClearTracer__Imp : thing MTF_IMP "A_ClearTracer - Imp"
+{
+	//$Category MBF21Edit
+	EdNum 3113
+
+	States
+	{
+		Melee:
+		Missile:
+			TROO EF 8 A_FaceTarget
+			TROO G 6 A_MonsterProjectile(A_ClearTracer__Fireball)
+			Goto See
+	}
+
+}

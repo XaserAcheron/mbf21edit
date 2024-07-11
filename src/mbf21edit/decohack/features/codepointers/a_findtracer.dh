@@ -1,0 +1,57 @@
+/*****************************************************************************
+ * mbf21edit - decohack
+ * (c) mtrop 2024
+ *     MIT License
+ *****************************************************************************
+ * 
+ * Feature: A_FindTracer
+ * 
+ * Defines an imp that fires a seeker fireball that attempts to find a 
+ * tracer target.
+ *
+ ****************************************************************************/
+
+// Declarations
+
+auto thing A_FindTracer__Fireball {}
+auto thing A_FindTracer__Imp {}
+
+// Definitions
+
+thing A_FindTracer__Fireball : thing MTF_IMP_FIREBALL "A_FindTracer - Fireball"
+{
+	States
+	{
+		Spawn:
+			BAL1 A 4 BRIGHT
+			BAL1 B 4 BRIGHT A_ClearTracer() // must let A_FindTracer work
+			BAL1 AB 4 BRIGHT
+		Find:
+			BAL1 A 4 BRIGHT
+			BAL1 B 4 BRIGHT {
+				A_FindTracer(90.0)
+				A_JumpIfTracerInSight(Tracing, 0.0)
+			}
+			Goto Find
+   		Tracing:
+			APLS AB 4 Bright A_SeekTracer(5.0, 30.0)
+			Loop
+	}
+	
+}
+
+thing A_FindTracer__Imp : thing MTF_IMP "A_FindTracer - Imp"
+{
+	//$Category MBF21Edit
+	EdNum 3112
+
+	States
+	{
+		Melee:
+		Missile:
+			TROO EF 8 A_FaceTarget
+			TROO G 6 A_MonsterProjectile(A_FindTracer__Fireball)
+			Goto See
+	}
+	
+}

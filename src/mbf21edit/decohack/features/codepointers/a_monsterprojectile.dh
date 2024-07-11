@@ -27,6 +27,7 @@ thing A_MonsterProjectile__ImpSpread : thing MTF_IMP "A_MonsterProjectile - ImpS
 
 	States
 	{
+		Melee:
 		Missile:
 			TROO EF 8 A_FaceTarget
 			TROO G 6 {
@@ -53,6 +54,7 @@ thing A_MonsterProjectile__ImpGrid : thing MTF_IMP "A_MonsterProjectile - ImpGri
 
 	States
 	{
+		Melee:
 		Missile:
 			TROO EF 8 A_FaceTarget
 			TROO G 6 {
