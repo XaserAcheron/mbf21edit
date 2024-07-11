@@ -1,0 +1,36 @@
+/*****************************************************************************
+ * mbf21edit - decohack
+ * (c) mtrop 2024
+ *     MIT License
+ *****************************************************************************
+ * 
+ * Feature: A_AddFlags
+ * 
+ * Defines an imp that will get more aggressive with missiles if it enters
+ * its PAIN state, plus turns partially invisible.
+ *
+ ****************************************************************************/
+
+// Declarations
+
+auto thing A_AddFlags__Imp {}
+
+// Definitions
+
+thing A_AddFlags__Imp : thing MTF_IMP "A_AddFlags - Imp"
+{
+	//$Category MBF21Edit
+	EdNum 3120
+
+	States
+	{
+		Pain:
+			TROO H 2
+			TROO H 2 {
+				A_Pain
+				A_AddFlags(SHADOW, HIGHERMPROB)
+			}
+			Goto See
+	}
+	
+}

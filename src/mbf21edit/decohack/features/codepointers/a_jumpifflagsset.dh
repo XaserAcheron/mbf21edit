@@ -1,0 +1,52 @@
+/*****************************************************************************
+ * mbf21edit - decohack
+ * (c) mtrop 2024
+ *     MIT License
+ *****************************************************************************
+ * 
+ * Feature: A_JumpIfFlagsSet
+ * 
+ * Defines an imp that moves faster if its JUSTHIT flag is set (was recently
+ * attacked).
+ *
+ ****************************************************************************/
+
+// Declarations
+
+auto thing A_JumpIfFlagsSet__Imp {}
+
+// Definitions
+
+thing A_JumpIfFlagsSet__Imp : thing MTF_IMP "A_JumpIfFlagsSet - Imp"
+{
+	//$Category MBF21Edit
+	EdNum 3119
+
+	States
+	{
+		See:
+			TROO AABBCCDD 3 {
+				A_Chase()
+				A_JumpIfFlagsSet(Pursue, JUSTHIT, 0)
+			}
+			Loop
+		Pursue:
+			TROO AABBCCDD 1 A_Chase()
+			TROO A 0 A_JumpIfFlagsSet(Pursue, JUSTHIT, 0)
+			Goto See // ensure it hits the new "see"
+		Melee:
+		Missile:
+			TROO EF 8 A_FaceTarget
+			TROO G 6 A_TroopAttack
+			Goto See // ensure it hits the new "see"
+		Pain:
+			TROO H 2
+			TROO H 2 A_Pain
+			Goto See // ensure it hits the new "see"
+		Raise:
+			TROO ML 8
+			TROO KJI 6
+			Goto See // ensure it hits the new "see"
+	}
+	
+}

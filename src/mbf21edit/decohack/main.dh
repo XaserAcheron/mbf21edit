@@ -32,6 +32,8 @@
 #include "features/codepointers/a_jumpiftargetcloser.dh"
 #include "features/codepointers/a_jumpiftracerinsight.dh"
 #include "features/codepointers/a_jumpiftracercloser.dh"
+#include "features/codepointers/a_jumpifflagsset.dh"
+#include "features/codepointers/a_addflags.dh"
 
 //
 // Comprehensive Samples
