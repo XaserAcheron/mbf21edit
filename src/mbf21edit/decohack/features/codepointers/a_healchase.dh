@@ -1,0 +1,34 @@
+/*****************************************************************************
+ * mbf21edit - decohack
+ * (c) mtrop 2024
+ *     MIT License
+ *****************************************************************************
+ * 
+ * Feature: A_HealChase
+ * 
+ * Defines an archvile that plays a different sound on Heal.
+ *
+ ****************************************************************************/
+
+// Declarations
+
+auto thing A_HealChase__Vile {}
+
+// Definitions
+
+thing A_HealChase__Vile : thing MTF_ARCHVILE "A_HealChase - Vile"
+{
+	//$Category MBF21Edit
+	EdNum 3110
+
+	States
+	{
+		See:
+			VILE AABBCCDDEEFF 2 A_HealChase(DoHeal, "SSDTH")
+			Loop
+		DoHeal:
+			VILE [\] 10 BRIGHT
+			Goto See // ensure that it goes back to the correct "see" state
+	}
+
+}

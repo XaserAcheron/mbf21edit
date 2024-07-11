@@ -17,6 +17,13 @@
  * 
  ****************************************************************************/
 
+thing SampleSpreadShot : thing MTF_IMP_FIREBALL "Spreadfire Shot"
+{
+	SeeSound ""
+	Damage 5
+	Speed 20
+}
+
 weapon SampleSpreadfireCannon "Spreadfire Cannon"
 {
 	states
@@ -51,11 +58,4 @@ weapon SampleSpreadfireCannon "Spreadfire Cannon"
 			SHTF B 2 Bright A_Light2
 			goto lightdone
 	}
-}
-
-thing SampleSpreadShot : thing MTF_IMP_FIREBALL "Spreadfire Shot"
-{
-	SeeSound ""
-	Damage 5
-	Speed 20
 }

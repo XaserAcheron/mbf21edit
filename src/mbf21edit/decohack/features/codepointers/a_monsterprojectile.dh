@@ -29,15 +29,17 @@ thing A_MonsterProjectile__ImpSpread : thing MTF_IMP "A_MonsterProjectile - ImpS
 	{
 		Missile:
 			TROO EF 8 A_FaceTarget
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, -45.0)
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, -22.5)
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL,   0.0)
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL,  22.5)
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL,  45.0)
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL,   0.0, -10.0)
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL,   0.0,  -5.0)
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL,   0.0,   5.0)
-			TROO G 6 A_MonsterProjectile(MTF_IMP_FIREBALL,   0.0,  10.0)
+			TROO G 6 {
+				A_MonsterProjectile(MTF_IMP_FIREBALL, -45.0)
+				A_MonsterProjectile(MTF_IMP_FIREBALL, -22.5)
+				A_MonsterProjectile(MTF_IMP_FIREBALL,   0.0)
+				A_MonsterProjectile(MTF_IMP_FIREBALL,  22.5)
+				A_MonsterProjectile(MTF_IMP_FIREBALL,  45.0)
+				A_MonsterProjectile(MTF_IMP_FIREBALL,   0.0, -10.0)
+				A_MonsterProjectile(MTF_IMP_FIREBALL,   0.0,  -5.0)
+				A_MonsterProjectile(MTF_IMP_FIREBALL,   0.0,   5.0)
+				A_MonsterProjectile(MTF_IMP_FIREBALL,   0.0,  10.0)
+			}
 			Goto See
 	}
 }
@@ -53,15 +55,17 @@ thing A_MonsterProjectile__ImpGrid : thing MTF_IMP "A_MonsterProjectile - ImpGri
 	{
 		Missile:
 			TROO EF 8 A_FaceTarget
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0, -10.0, -10.0)
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,   0.0, -10.0)
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,  10.0, -10.0)
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0, -10.0,   0.0)
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,   0.0,   0.0)
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,  10.0,   0.0)
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0, -10.0,  10.0)
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,   0.0,  10.0)
-			TROO G 0 A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,  10.0,  10.0)
+			TROO G 6 {
+				A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0, -10.0, -10.0)
+				A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,   0.0, -10.0)
+				A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,  10.0, -10.0)
+				A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0, -10.0,   0.0)
+				A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,   0.0,   0.0)
+				A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,  10.0,   0.0)
+				A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0, -10.0,  10.0)
+				A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,   0.0,  10.0)
+				A_MonsterProjectile(MTF_IMP_FIREBALL, 0.0, 0.0,  10.0,  10.0)
+			}
 			Goto See
 	}
 }

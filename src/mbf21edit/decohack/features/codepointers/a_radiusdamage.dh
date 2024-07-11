@@ -1,0 +1,40 @@
+/*****************************************************************************
+ * mbf21edit - decohack
+ * (c) mtrop 2024
+ *     MIT License
+ *****************************************************************************
+ * 
+ * Feature: A_RadiusDamage
+ * 
+ * Defines an exploding lost soul.
+ *
+ ****************************************************************************/
+
+// Declarations
+
+auto thing A_RadiusDamage__LostSoul {}
+
+// Definitions
+
+thing A_RadiusDamage__LostSoul : thing MTF_LOSTSOUL "A_RadiusDamage - Lost Soul"
+{
+	//$Category MBF21Edit
+	EdNum 3108
+
+	States
+	{
+		Melee:
+		Death:
+			SKUL F 6 BRIGHT
+			SKUL G 6 BRIGHT {
+				A_Scream
+				A_RadiusDamage(50, 128)
+			}
+			SKUL H 6 BRIGHT
+			SKUL I 6 BRIGHT A_Fall
+			SKUL J 6
+			SKUL K 6
+			Stop
+	}
+
+}

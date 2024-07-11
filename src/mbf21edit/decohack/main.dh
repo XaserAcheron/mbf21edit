@@ -18,6 +18,12 @@
 //
 
 #include "features/codepointers/a_monsterprojectile.dh"
+#include "features/codepointers/a_spawnobject.dh"
+#include "features/codepointers/a_monsterbulletattack.dh"
+#include "features/codepointers/a_monstermeleeattack.dh"
+#include "features/codepointers/a_radiusdamage.dh"
+#include "features/codepointers/a_noisealert.dh"
+#include "features/codepointers/a_healchase.dh"
 
 //
 // Comprehensive Samples

@@ -1,0 +1,36 @@
+/*****************************************************************************
+ * mbf21edit - decohack
+ * (c) mtrop 2024
+ *     MIT License
+ *****************************************************************************
+ * 
+ * Feature: A_MonsterBulletAttack
+ * 
+ * Defines a "super-shotgun" shotgun guy.
+ *
+ ****************************************************************************/
+
+// Declarations
+
+auto thing A_MonsterBulletAttack__Guy {}
+
+// Definitions
+
+thing A_MonsterBulletAttack__Guy : thing MTF_SHOTGUNGUY "A_MonsterBulletAttack - Guy"
+{
+	//$Category MBF21Edit
+	EdNum 3106
+
+	States
+	{
+		Missile:
+			SPOS E 10 A_FaceTarget
+			SPOS F 10 BRIGHT {
+				A_PlaySound("DSHTGN")
+				A_MonsterBulletAttack(22.5, 11.25, 6, 3, 5)
+			}
+			SPOS E 10
+			Goto See
+	}
+
+}
