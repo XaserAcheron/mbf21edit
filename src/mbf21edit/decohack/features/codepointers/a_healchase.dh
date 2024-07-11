@@ -26,6 +26,18 @@ thing A_HealChase__Vile : thing MTF_ARCHVILE "A_HealChase - Vile"
 		See:
 			VILE AABBCCDDEEFF 2 A_HealChase(DoHeal, "SSDTH")
 			Loop
+		Missile:
+			VILE G 0 BRIGHT A_VileStart
+			VILE G 10 BRIGHT A_FaceTarget
+			VILE H 8 BRIGHT A_VileTarget
+			VILE IJKLMN 8 BRIGHT A_FaceTarget
+			VILE O 8 BRIGHT A_VileAttack
+			VILE P 20 BRIGHT
+			Goto See // ensure that it goes back to the correct "see" state
+		Pain:
+			VILE Q 5
+			VILE Q 5 A_Pain
+			Goto See // ensure that it goes back to the correct "see" state
 		DoHeal:
 			VILE [\] 10 BRIGHT
 			Goto See // ensure that it goes back to the correct "see" state
