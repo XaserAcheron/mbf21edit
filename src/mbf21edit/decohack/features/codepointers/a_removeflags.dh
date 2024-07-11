@@ -1,0 +1,39 @@
+/*****************************************************************************
+ * mbf21edit - decohack
+ * (c) mtrop 2024
+ *     MIT License
+ *****************************************************************************
+ * 
+ * Feature: A_AddFlags
+ * 
+ * Defines an imp that is aggressive with missiles and partially invisible,
+ * and loses those characteristics if it enters the PAIN state.
+ *
+ ****************************************************************************/
+
+// Declarations
+
+auto thing A_RemoveFlags__Imp {}
+
+// Definitions
+
+thing A_RemoveFlags__Imp : thing MTF_IMP "A_RemoveFlags - Imp"
+{
+	//$Category MBF21Edit
+	EdNum 3121
+
+	+SHADOW
+	+HIGHERMPROB
+
+	States
+	{
+		Pain:
+			TROO H 2
+			TROO H 2 {
+				A_Pain
+				A_RemoveFlags(SHADOW, HIGHERMPROB)
+			}
+			Goto See
+	}
+	
+}

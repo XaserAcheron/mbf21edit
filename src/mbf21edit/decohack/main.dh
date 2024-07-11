@@ -34,6 +34,7 @@
 #include "features/codepointers/a_jumpiftracercloser.dh"
 #include "features/codepointers/a_jumpifflagsset.dh"
 #include "features/codepointers/a_addflags.dh"
+#include "features/codepointers/a_removeflags.dh"
 
 //
 // Comprehensive Samples
