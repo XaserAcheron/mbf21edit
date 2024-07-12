@@ -85,6 +85,7 @@ thing A_SpawnObject__FireballImp : thing MTF_IMP "A_SpawnObject - Multi Fireball
 
 	States
 	{
+		Melee:
 		Missile:
 			TROO EF 8 A_FaceTarget
 			TROO G 6 A_MonsterProjectile(A_SpawnObject__Fireball)
