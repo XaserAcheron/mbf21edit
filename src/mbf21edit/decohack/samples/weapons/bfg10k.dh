@@ -1,0 +1,90 @@
+/*****************************************************************************
+ * mbf21edit - decohack
+ * (c) xaser acheron 2024
+ *     MIT License
+ *****************************************************************************
+ * BFG10K
+ * 
+ * A rough emulation of Quake 2's BFG10K, featuring zany ripper projectiles.
+ * 
+ * Demonstrates:
+ *  [XA] TUYH TODO: this :P
+ * 
+ ****************************************************************************/
+
+weapon SampleBFG10K "BFG10K"
+{
+	states
+	{
+		Fire:
+			BFGG A 20 A_BFGsound
+			BFGG B 10 A_GunFlash
+			BFGG B 10 A_WeaponProjectile(SampleBFG10KBall)
+			BFGG B 20 A_ReFire
+			Goto Ready
+	}
+}
+
+thing SampleBFG10KBall "BFG10K Ball"
+{
+	Damage 10
+	Speed 10
+	FastSpeed 50
+	Radius 13
+	Height 8
+
+	DeathSound rxplod
+	RipSound slop
+
+	+MISSILE
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+DROPOFF
+	+RIP
+	+FRIENDLY
+
+	states
+	{
+		Spawn:
+			BFS1 AB 4
+		LookAround:
+			BFS1 AB 4 Bright A_Look
+			Loop
+		See:
+			BFS1 AB 4 Bright A_JumpIfTargetInSight(FireTracer)
+			Goto LookAround
+		FireTracer:
+			BFS1 A 0 Bright A_FaceTarget
+			BFS1 AB 4 Bright A_SpawnObject(SampleBFG10KTracer, 0.0, 0.0, 0.0, 0.0, 25.0)
+			Goto See
+		Death:
+			BFE1 ABCDEF 5 Bright
+			Stop
+	}
+}
+
+thing SampleBFG10KTracer "BFG10K Tracer"
+{
+	Damage 10
+	Speed 25
+	Radius 13
+	Height 8
+
+	SeeSound plasma
+	DeathSound firxpl
+
+	+MISSILE
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+DROPOFF
+
+	states
+	{
+		Spawn:
+			APLS AAABBB 1 Bright A_SeekTracer(2.0, 4.0)
+			Loop
+		Death:
+			APBX ABCDE 4 Bright
+			Stop
+	}
+}

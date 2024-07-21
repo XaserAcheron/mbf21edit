@@ -12,8 +12,11 @@ alias weapon SampleSpreadfireCannon  WP_SHOTGUN
 alias weapon SampleSuperChaingun     WP_CHAINGUN
 alias weapon SampleGrenadeLauncher   WP_MISSILE
 alias weapon SampleHomingPlasmaRifle WP_PLASMA
+alias weapon SampleBFG10K            WP_BFG
 
 auto thing SampleSpreadShot {}
 auto thing SampleGrenade {}
 auto thing SampleGrenadeBoom {}
 auto thing SampleHomingPlasma {}
+auto thing SampleBFG10KBall {}
+auto thing SampleBFG10KTracer {}
