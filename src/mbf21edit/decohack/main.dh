@@ -40,6 +40,7 @@
 // Comprehensive Samples
 //
 
+#include "samples/weapons/semiautopistol.dh"
 #include "samples/weapons/spreadfirecannon.dh"
 #include "samples/weapons/superchaingun.dh"
 #include "samples/weapons/grenadelauncher.dh"
