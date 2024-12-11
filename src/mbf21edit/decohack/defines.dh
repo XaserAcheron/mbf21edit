@@ -8,6 +8,7 @@
 // Aliases & Declarations
 //
 
+alias weapon SampleMegaPunch         WP_FIST
 alias weapon SampleSemiAutoPistol    WP_PISTOL
 alias weapon SampleSpreadfireCannon  WP_SHOTGUN
 alias weapon SampleSuperChaingun     WP_CHAINGUN
